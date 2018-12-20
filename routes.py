@@ -241,7 +241,11 @@ def get_stops():
     for line in reader:
         stop = Stop(line)
         if stop.isStation and stop.id not in all_ids:
-            stop.matches = stop.is_in_osm()
+            try:
+                stop.matches = stop.is_in_osm()
+            except json.decoder.JSONDecodeError:
+                logging.error("[get_stops]  Name: %s; Exception in is_in_osm", stop.name)
+                continue
             if stop.matches > 0:
                 print_success(stop.name + ": " + str(stop.matches))
             else:
