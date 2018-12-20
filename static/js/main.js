@@ -39,13 +39,13 @@ function radiusmap(lat, lon) {
   }, 500);
 }
 function hiderows(element){
-  if (element.attr("checked")){
-    $("."+element.attr("name")).each(function(){
+  if (element.prop("checked")){
+    $("."+element.prop("name")).each(function(){
       $(this).css("display", "table-row");
     });
   }
   else{
-    $("."+element.attr("name")).each(function(){
+    $("."+element.prop("name")).each(function(){
       $(this).css("display", "none");
     });
   }
@@ -94,15 +94,15 @@ function get_parameters(){
 
 function change_links(){
   var parampart = "?";
-  if ($("#nomatch").attr("checked") == "checked"){
+  if ($("#nomatch").prop("checked")){
     parampart += "nomatch=true&";
   }
-  if ($("#match").attr("checked") == "checked"){
+  if ($("#match").prop("checked")){
     parampart += "match=true";
   }
   $(".pagination a").each(function(){
     var old_url, new_url;
-    old_url = $(this).attr("href");
+    old_url = $(this).prop("href");
     if (old_url.indexOf("?") > -1){
       new_url = old_url.split("?")[0];
     }
@@ -110,7 +110,7 @@ function change_links(){
       new_url = old_url;
     }
     new_url += parampart;
-    $(this).attr("href", new_url);
+    $(this).prop("href", new_url);
   });
 }
 
@@ -119,5 +119,5 @@ function change_link_for_remote_edit(){
   var lon = radius_map.getCenter().lng;
   var zoom = radius_map.getZoom();
   var url = "http://www.openstreetmap.org/edit?editor=remote&lat=" + lat + "&lon=" + lon + "&zoom=" + zoom;
-  $("#remote_edit_link").attr("href", url);
+  $("#remote_edit_link").prop("href", url);
 }
