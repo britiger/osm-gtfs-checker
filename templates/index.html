@@ -8,6 +8,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
     <script src="/static/js/main.js"></script>
     {% block head %}
     <style>
@@ -51,6 +52,10 @@
 
       .navbar-inner > .container {
         padding: 0;
+      }
+
+      .github-fork-ribbon.right-bottom:before {
+        background-color: #333;
       }
     </style>
     <script>
@@ -251,7 +256,7 @@
       </div>
     </div>
     {% endblock %}
-    <a class="hidden-phone" href="https://github.com/k-nut/osm-gtfs-checker"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <a class="github-fork-ribbon right-bottom fixed hidden-phone" href="https://github.com/k-nut/osm-gtfs-checker" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a> 
     <!-- Piwik -->
     <script type="text/javascript">
       var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.k-nut.eu/" : "http://piwik.k-nut.eu/");
