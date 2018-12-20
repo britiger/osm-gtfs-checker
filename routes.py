@@ -251,6 +251,8 @@ def get_stops():
             counter += 1
             if counter % 20 == 0:
                 db.session.commit()
+        else:
+            logging.info("[get_stops]  Name: %s; Skipped" % (stop.name))
 
 
 if __name__ == "__main__":
