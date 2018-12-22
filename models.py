@@ -142,6 +142,9 @@ class Stop(db.Model):
             return matches
 
         for name in names:
+            if difflib.SequenceMatcher(None, name, self.name).ratio() > 0.6:
+                matches += 1
+                break
             for short_n in short_name.split("|"):
                 if difflib.SequenceMatcher(None, name, short_n).ratio() > 0.6:
                     matches += 1
