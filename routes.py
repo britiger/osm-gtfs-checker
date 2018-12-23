@@ -213,7 +213,7 @@ def recheck_batch(Stops):
 
 
 def recheck_all_missings_stops():
-    Stops = Stop.query.filter(Stop.matches < 1).all()
+    Stops = Stop.query.filter(Stop.matches < 1).order_by(Stop.last_run).all()
     recheck_batch(Stops)
 
 
@@ -224,7 +224,7 @@ def recheck_by_name(name):
 
 
 def recheck_all():
-    Stops = Stop.query.all()
+    Stops = Stop.query.order_by(Stop.last_run).all()
     recheck_batch(Stops)
 
 
