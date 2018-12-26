@@ -42,7 +42,10 @@ class Stop(db.Model):
         self.name = line_from_stops_txt["stop_name"]
         self.lat = float(line_from_stops_txt["stop_lat"])
         self.lon = float(line_from_stops_txt["stop_lon"])
-        parent_station = line_from_stops_txt["parent_station"]
+        if "parent_station" in line_from_stops_txt:
+            parent_station = line_from_stops_txt["parent_station"]
+        else:
+            parent_station = ""
         if parent_station == "":
             self.isStation = True
         else:

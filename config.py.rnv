@@ -1,0 +1,5 @@
+db_path = "./stops.db"
+stops_txt_url = "stops.txt"
+name = "RNV Haltestellen-Validator"
+initial_map_cordinates = {'lat': 48.35, 'lon': 10.00}
+attribution = "Rhein-Neckar-Verkehr GmbH (rnv) (https://opendata.rnv-online.de/datensaetze/gtfs-general-transit-feed-specification/resource/rnv-gtfs)"
